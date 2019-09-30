@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardBackgroundColor="@color/spaceGray"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="5dp"
+        card_view:cardMaxElevation="6dp"
+        card_view:cardUseCompatPadding="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
+        <TextView
+                android:id="@+id/tvTimerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:maxLength="30"
+                tools:text="My Timer"
+                android:layout_marginTop="8dp" card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvSetCounter"
+                card_view:layout_constraintStart_toStartOf="parent" card_view:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginStart="8dp"/>
+
+        <com.robinhood.ticker.TickerView
+                android:id="@+id/tvTimerHours"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:gravity="center"
+                tools:text="15"
+                android:fontFamily="lato"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintVertical_bias="0.20"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerName"
+                card_view:layout_constraintHorizontal_bias="0.5"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintStart_toEndOf="@+id/btnDrag"
+                card_view:layout_constraintHorizontal_chainStyle="packed"/>
+        <com.robinhood.ticker.TickerView
+                android:id="@+id/tvTimerMinutes"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:gravity="center"
+                tools:text="30"
+                android:fontFamily="lato"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/tvTimerHours"
+                card_view:layout_constraintVertical_bias="0.2"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerName" android:layout_marginStart="12dp"
+                card_view:layout_constraintHorizontal_bias="0.5"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvTimerSeconds"/>
+
+        <com.robinhood.ticker.TickerView
+                android:id="@+id/tvTimerSeconds"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:gravity="center"
+                tools:text="20"
+                android:fontFamily="lato"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerName"
+                card_view:layout_constraintStart_toEndOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintVertical_bias="0.2"
+                android:layout_marginStart="12dp"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvSetCounter"/>
+
+        <TextView
+                android:text="Hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimerHoursTitle"
+                android:textSize="10sp"
+                card_view:layout_constraintEnd_toEndOf="@+id/tvTimerHours"
+                card_view:layout_constraintStart_toStartOf="@+id/tvTimerHours"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerHours"/>
+        <TextView
+                android:text="Minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimerMinutesTitle"
+                android:textSize="10sp"
+                card_view:layout_constraintEnd_toEndOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintStart_toStartOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerMinutes"/>
+        <TextView
+                android:text="Seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimerSecondsTitle"
+                android:textSize="10sp"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerSeconds"
+                card_view:layout_constraintEnd_toEndOf="@+id/tvTimerSeconds"
+                card_view:layout_constraintStart_toStartOf="@+id/tvTimerSeconds"/>
+        <TextView
+                android:id="@+id/tvSetCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_barbell_32dp"
+                android:gravity="center_vertical"
+                android:textSize="24sp"
+                tools:text=": 1"
+                card_view:layout_constraintEnd_toStartOf="@+id/btnStart"
+                card_view:layout_constraintTop_toBottomOf="@+id/btnIncSet"
+                card_view:layout_constraintBottom_toTopOf="@+id/btnDecSet" android:layout_marginEnd="8dp"/>
+        <ImageButton
+                android:id="@+id/btnDecSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_down_chevron_48dp"
+                card_view:layout_constraintStart_toStartOf="@+id/tvSetCounter"
+                card_view:layout_constraintEnd_toEndOf="@+id/tvSetCounter"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvSetCounter"
+                card_view:layout_constraintHorizontal_bias="0.5"/>
+        <ImageButton
+                android:id="@+id/btnIncSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_up_chevron_48dp"
+                card_view:layout_constraintStart_toStartOf="@+id/tvSetCounter"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintEnd_toEndOf="@+id/tvSetCounter"
+                card_view:layout_constraintHorizontal_bias="0.5"
+                card_view:layout_constraintBottom_toTopOf="@+id/tvSetCounter"/>
+        <ImageButton
+                android:id="@+id/btnStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_start_48dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"/>
+        <ImageButton
+                android:id="@+id/btnPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_pause_black_48dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+                android:id="@+id/btnReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_reset_32dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible"
+                card_view:layout_constraintTop_toBottomOf="@+id/btnStart"
+                card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+        <ImageButton
+                android:id="@+id/btnDrag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_drag_handle_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="4dp" card_view:layout_constraintTop_toTopOf="parent"/>
+        <ImageButton
+                android:id="@+id/btnTimerMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_more_vert_24dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="4dp"
+        />
+        <TextView
+                android:text=":"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/tvTimerHoursSepartor"
+                card_view:layout_constraintStart_toEndOf="@+id/tvTimerHours"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerName"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintVertical_bias="0.2" android:textSize="36sp" android:layout_marginEnd="6dp"/>
+        <TextView
+                android:text=":"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/tvTimerMinutesSepartor"
+                card_view:layout_constraintEnd_toStartOf="@+id/tvTimerSeconds"
+                card_view:layout_constraintStart_toEndOf="@+id/tvTimerMinutes"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvTimerName"
+                card_view:layout_constraintVertical_bias="0.2" android:textSize="36sp" android:layout_marginEnd="6dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

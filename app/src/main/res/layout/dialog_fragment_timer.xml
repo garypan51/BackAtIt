@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.fragments.dialogs.AddTimerDialogFragment">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/addTimerTitle"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npHours"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle"
+        app:np_dividerColor="@color/colorPrimary"
+        app:np_height="180dp"
+        app:np_max="59"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/colorPrimary"
+        app:np_textColor="@color/colorPrimary"
+        app:np_value="0"
+        app:np_width="64dp" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npMinutes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/tvHoursTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle"
+        app:np_dividerColor="@color/colorPrimary"
+        app:np_height="180dp"
+        app:np_max="59"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/colorPrimary"
+        app:np_textColor="@color/colorPrimary"
+        app:np_value="0"
+        app:np_width="64dp" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npSeconds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/tvMinutesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle"
+        app:np_dividerColor="@color/colorPrimary"
+        app:np_height="180dp"
+        app:np_max="59"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/colorPrimary"
+        app:np_textColor="@color/colorPrimary"
+        app:np_value="0"
+        app:np_width="64dp" />
+
+    <TextView
+        android:id="@+id/tvHoursTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="H\nO\nU\nR"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/npHours"
+        app:layout_constraintStart_toEndOf="@+id/npHours"
+        app:layout_constraintTop_toTopOf="@+id/npHours" />
+
+    <TextView
+        android:id="@+id/tvMinutesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="M\n I\nN"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/npMinutes"
+        app:layout_constraintStart_toEndOf="@+id/npMinutes"
+        app:layout_constraintTop_toTopOf="@+id/npMinutes" />
+
+    <TextView
+        android:id="@+id/tvSecondsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="12dp"
+        android:text="S\nE\nC"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/npSeconds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/npSeconds"
+        app:layout_constraintTop_toTopOf="@+id/npSeconds" />
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiTimerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/timerName"
+            app:layout_constraintTop_toBottomOf="@+id/npHours" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:inputType="textCapWords"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Switch
+        android:id="@+id/switchAutoInc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/autoIncFull"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiTimerName" />
+
+    <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:text="@string/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnDelete"
+            app:layout_constraintVertical_bias="0.0" android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btnOk"
+        app:layout_constraintEnd_toStartOf="@+id/btnOk" />
+
+    <TextView
+        android:id="@+id/tvAutoResetMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/autoResetFull"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etAutoResetSets"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etAutoResetSets"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/numberSymbol"
+        android:inputType="number"
+        android:maxLength="5"
+        app:layout_constraintStart_toEndOf="@+id/tvAutoResetMessage"
+        app:layout_constraintTop_toBottomOf="@+id/switchAutoInc" />
+
+    <TextView
+        android:id="@+id/tvSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/sets"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etAutoResetSets"
+        app:layout_constraintStart_toEndOf="@+id/etAutoResetSets" />
+    <Button
+            android:text="@string/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSet"
+            android:background="@android:color/transparent" android:visibility="gone"
+            android:textColor="@color/brightRed"
+            tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

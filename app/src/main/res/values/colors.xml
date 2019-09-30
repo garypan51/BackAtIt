@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#28292E</color>
+    <color name="colorPrimaryDark">#28292E</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <!--<color name="smokeWhite">#dcdcdc</color>-->
+    <color name="darkBlack">#000000</color>
+    <color name="coolGray">#8896AB</color>
+    <color name="charcoalGray">#364652</color>
+    <color name="spaceGray">#424C55</color>
+    <color name="darkLiver">#4C4C47</color>
+    <color name="steelTeal">#52647A</color>
+    <color name="tuscany">#B09E99</color>
+    <color name="darkBlue">#0E1721</color>
+    <color name="black">#1b1919</color>
+    <color name="brightRed">#cb0011</color>
+    <color name="darkRed">#8a0a0a</color>
+    <color name="deleteRed">#C60923</color>
+    <color name="greenTimerCard">#FF01C365</color>
+    <color name="yellowTimerCard">#cccc00</color>
+    <color name="redTimerCard">#EF5B5B</color>
+    <color name="greenTimerText">#18a033</color>
+    <color name="nightGrey">#28292e</color>
+    <color name="brightBlue">#ff207d94</color>
+    <color name="smokeWhite">#DFDFE5</color>
+</resources>

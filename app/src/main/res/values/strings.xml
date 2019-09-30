@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Back At It! Workout Rest Timer and StopWatch</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="hr">Hours</string>
+    <string name="min">Minutes</string>
+    <string name="sec">Seconds</string>
+    <string name="autoIncFull">Auto-Increment Sets</string>
+    <string name="autoResetFull">Auto-Reset Sets After</string>
+    <string name="timerName">Timer Name(Optional)</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+
+    <!--Timer List Fragment-->
+    <string name="activeTimers">Active Timers: %1$d</string>
+    <string name="totalTimers">Total Timers: %1$d</string>
+
+    <!--Timer CardView Text-->
+    <string name="hourSymbolLowerCase"><b>h</b></string>
+    <string name="minuteSymbolLowerCase"><b>m</b></string>
+    <string name="secondsSymbolLowerCase"><b>s</b></string>
+    <string name="setCount"><b>: %1$d</b></string>
+
+    <!--Add Timer Dialog-->
+    <string name="addTimerTitle"><b>ADD TIMER</b></string>
+    <string name="editTimerTitle"><b>EDIT TIMER</b></string>
+    <string name="save">Save</string>
+    <string name="exit">Exit</string>
+    <string name="sets">Sets</string>
+
+    <string name="lap">Lap</string>
+    <string name="numberSymbol"><b>#</b></string>
+    <string name="reset">Reset</string>
+    <string name="dumbbellIcon">Dumbbell Icon</string>
+
+    <!--ImageView Descriptions-->
+    <string name="dragHandleDescription">Drag handle image for users to drag and re-order.</string>
+    <string name="stopWatchEncloseDescription">Square enclosure around stopwatch time display.</string>
+    <string name="notificationRestart">Restart button on the notification for when the timer is over.</string>
+
+    <!--AdMob ID's-->
+    <string name="app_ad_id">ca-app-pub-2135676329337085~8791748455</string>
+    <string name="banner_ad_id">ca-app-pub-2135676329337085/3156278399</string>
+    <string name="interstitial_ad_id">ca-app-pub-2135676329337085/2309158637</string>
+
+    <!--Settings - Licenses Information-->
+    <string name="libraryMain">Library License</string>
+    <string name="libraryBody">Copyright (&#169;) 2018 Google, Inc\n
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at\n
+        &#09;http://www.apache.org/licenses/LICENSE-2.0\n
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+    </string>
+
+    <!--Settings - Developer Contact Information-->
+    <string name="contactMain">Contact Information</string>
+    <string name="contactBody">Thank You for using our app!
+        Please feel free to offer any comments or recommendations on how we should improve our app. If
+        you discover any bugs please provide us some details about it so we can quickly fix any bugs
+        that is afflicting our app.
+        \nEmail: waggishstudio@gmail.com
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

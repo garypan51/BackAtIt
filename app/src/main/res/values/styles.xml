@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="viewPagerTitleStrip">
+        <item name="android:background">@color/nightGrey</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="RippleButton" parent="Theme.AppCompat">
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="backgroundCardColor">@color/darkBlue</item>
+    </style>
+
+    <style name="PrefTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Light base activity theme -->
+    <style name="LightTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/coolGray</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="primaryTextColor">@color/black</item>
+        <item name="backgroundColor">@color/smokeWhite</item>
+        <item name="backgroundCardColor">@color/smokeWhite</item>
+        <item name="backgroundCardRunningColor">@color/greenTimerText</item>
+        <item name="backgroundCardPausedColor">@color/yellowTimerCard</item>
+        <item name="backgroundCardCompletedColor">@color/redTimerCard</item>
+        <item name="cardDividerColor">@color/black</item>
+        <item name="tabSelectedColor">@color/black</item>
+        <item name="tabUnselectedColor">@color/brightBlue</item>
+        <item name="tabIndicatorColor">@color/brightBlue</item>
+        <item name="floatingButtonColor">@color/black</item>
+        <item name="enclosureColor">@color/brightBlue</item>
+        <item name="floatingAdd">@drawable/ic_add_24dp</item>
+        <!--<item name="android:fontFamily">@font/poppins_medium</item>-->
+        <!--<item name="playButton">@drawable/ic_play_black_24dp</item>-->
+        <!--<item name="pauseButton">@drawable/ic_pause_black_24dp</item>-->
+        <!--<item name="resetButton">@drawable/ic_reset_black_24dp</item>-->
+        <!--<item name="timerSettingsButton">@drawable/ic_settings_black_24dp</item>-->
+        <!--<item name="dragHandleButton">@drawable/ic_drag_handle_black_24dp</item>-->
+        <!--<item name="dumbbellSetImageView">@drawable/ic_dumbbell_black_24dp</item>-->
+        <!--<item name="setIncButton">@drawable/ic_inc_black_24dp</item>-->
+        <!--<item name="setDecButton">@drawable/ic_dec_black_24dp</item>-->
+        <!--<item name="pipTimerImageView">@drawable/ic_timer_black_24dp</item>-->
+
+        <item name="android:textColor">@color/smokeWhite</item>
+    </style>
+
+    <!-- Dark base activity theme -->
+    <style name="DarkTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/nightGrey</item>
+        <item name="android:textColorSecondary">@color/smokeWhite</item>
+        <item name="primaryTextColor">@color/smokeWhite</item>
+        <item name="backgroundColor">@color/nightGrey</item>
+        <item name="backgroundCardColor">@color/spaceGray</item>
+        <item name="backgroundCardRunningColor">@color/greenTimerText</item>
+        <item name="backgroundCardPausedColor">@color/yellowTimerCard</item>
+        <item name="backgroundCardCompletedColor">@color/redTimerCard</item>
+        <item name="cardDividerColor">@color/smokeWhite</item>
+        <item name="tabSelectedColor">@color/smokeWhite</item>
+        <item name="tabUnselectedColor">@color/brightRed</item>
+        <item name="tabIndicatorColor">@color/brightRed</item>
+        <item name="floatingButtonColor">@color/black</item>
+        <item name="enclosureColor">@color/brightRed</item>
+        <item name="floatingAdd">@drawable/ic_add_24dp</item>
+        <!--<item name="android:fontFamily">@font/poppins_medium</item>-->
+        <!--<item name="playButton">@drawable/ic_play_white_24dp</item>-->
+        <!--<item name="pauseButton">@drawable/ic_pause_white_24dp</item>-->
+        <!--<item name="resetButton">@drawable/ic_reset_white_24dp</item>-->
+        <!--<item name="timerSettingsButton">@drawable/ic_settings_white_24dp</item>-->
+        <!--<item name="dragHandleButton">@drawable/ic_drag_handle_white_24dp</item>-->
+        <!--<item name="dumbbellSetImageView">@drawable/ic_dumbbell_white_24dp</item>-->
+        <!--<item name="setIncButton">@drawable/ic_inc_white_24dp</item>-->
+        <!--<item name="setDecButton">@drawable/ic_dec_white_24dp</item>-->
+        <!--<item name="pipTimerImageView">@drawable/ic_timer_white_24dp</item>-->
+
+        <item name="android:textColor">@color/smokeWhite</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
