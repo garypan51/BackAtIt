@@ -358,7 +358,7 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
         val fragment = EditTimerDialogFragment.newInstance(timer.id!!, timer.name, timer.initHours, timer.initMinutes,
             timer.initSeconds, timer.shouldAutoInc, timer.autoReset)
         fragment.setTargetFragment(lifeCycle as Fragment, 500)
-        fragment.show(lifeCycle.fragmentManager, "editTimerDialog")
+        fragment.show(lifeCycle.fragmentManager!!, "editTimerDialog")
     }
 
     override fun getItemCount(): Int {

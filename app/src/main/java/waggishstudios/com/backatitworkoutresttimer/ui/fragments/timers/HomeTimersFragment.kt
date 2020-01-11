@@ -126,7 +126,7 @@ class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogList
         fabAddTimer.setOnClickListener {
             val addTimerDialogFragment = AddTimerDialogFragment()
             addTimerDialogFragment.setTargetFragment(this, 300)
-            addTimerDialogFragment.show(fragmentManager, "addTimerDialog")
+            addTimerDialogFragment.show(fragmentManager!!, "addTimerDialog")
         }
     }
 
