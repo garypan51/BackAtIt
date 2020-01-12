@@ -96,11 +96,6 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
             holder.timerTVHoursTitle.visibility = View.GONE
             holder.timerTVHoursSepartor.visibility = View.GONE
         }
-        if(currentMinutes == "0") {
-            holder.timerTVMinutes.visibility = View.GONE
-            holder.timerTVMinutesTitle.visibility = View.GONE
-            holder.timerTVMinutesTitleSepartor.visibility = View.GONE
-        }
     }
 
     private fun showHoursAndMinutes(holder: TimerViewHolder) {
@@ -116,7 +111,7 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
         holder.timerNameTV.text = timer.name
         holder.timerTVHours.text = timer.initHours.toString()
         holder.timerTVMinutes.text = timer.initMinutes.toString()
-        holder.timerTVSeconds.text = timer.initSeconds.toString()
+        holder.timerTVSeconds.text = String.format("%02d", timer.initSeconds)
         checkAndHideHoursAndMinutes(holder.timerTVHours.text, holder.timerTVMinutes.text, holder)
         holder.setCounterTV.text = context.getString(R.string.setCount, timer.setCounter)
     }
@@ -347,7 +342,6 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
 
     private fun updateAnimationProgress(timer: Timer, newProgress: Long){
         timer.animationProgress = newProgress
-        //TODO call db
     }
 
     private fun showEditTimerDialog(timer: Timer) {
