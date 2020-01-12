@@ -1,4 +1,4 @@
-package waggishstudios.com.backatitworkoutresttimer.core.services
+package waggishstudios.com.backatitworkoutresttimer.core.services.timer
 
 import android.app.Notification
 import android.app.NotificationManager
@@ -15,8 +15,6 @@ import waggishstudios.com.backatitworkoutresttimer.core.utils.NotificationUtil
 import android.content.BroadcastReceiver
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.content.IntentFilter
-import android.util.Log
-import androidx.lifecycle.LifecycleOwner
 import com.firebase.jobdispatcher.FirebaseJobDispatcher
 import com.firebase.jobdispatcher.GooglePlayDriver
 import com.firebase.jobdispatcher.RetryStrategy
@@ -55,8 +53,6 @@ class TimerService : LifecycleService() {
                 }
 
                 IntentConstants.TimerService.START_SERVICE_TIMEOUT -> {
-//                    val timeToStop = SharedPrefManager.getIntSharedPref(context, "StopAppDurationPref", 30)
-//                    Log.d(TAG, "StopForeground - time " + timeToStop.toString())
                     val stopTimerServiceJob = dispatcher.newJobBuilder()
                             .setService(StopTimerJobService::class.java)
                             .setTag("killService")
@@ -76,17 +72,17 @@ class TimerService : LifecycleService() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d("testingLife", "service oncreate")
         localBroadcastManager = LocalBroadcastManager.getInstance(this)
         val intentFilter = IntentFilter()
         intentFilter.addAction(IntentConstants.TimerService.STOP_SERVICE)
         intentFilter.addAction(IntentConstants.TimerService.RESTART_TIMER)
         registerReceiver(broadcastReceiver, intentFilter)
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        NotificationUtil.createNotificationChannel(notificationManager, PERSISTENT_ACTIVE_CHANNEL_ID, "Running Timer",
+        NotificationUtil.createNotificationChannel(notificationManager,
+            PERSISTENT_ACTIVE_CHANNEL_ID, "Running Timer",
             "Persistent Notification", 2)
-
-        NotificationUtil.createNotificationChannel(notificationManager, PERSISTENT_COMPLETED_CHANNEL_ID, "Completed Timer",
+        NotificationUtil.createNotificationChannel(notificationManager,
+            PERSISTENT_COMPLETED_CHANNEL_ID, "Completed Timer",
             "Persistent Notification", 4)
     }
 
@@ -106,7 +102,6 @@ class TimerService : LifecycleService() {
         when (numberOfActiveTimers) {
             0 -> {
                 cancelForeground()
-//                this.coroutineContext.cancel()
             }
             1 -> {
                 val activeTimer = getActiveTimer()
@@ -115,7 +110,8 @@ class TimerService : LifecycleService() {
             }
             else -> {
                 notificationHandler.removeMessages(0)
-                val persistentNotification = NotificationUtil.createMultipleActiveTimerNotification(PERSISTENT_ACTIVE_CHANNEL_ID, applicationContext)
+                val persistentNotification = NotificationUtil.createMultipleActiveTimerNotification(
+                    PERSISTENT_ACTIVE_CHANNEL_ID, applicationContext)
                 startForeground(FOREGROUND_ID, persistentNotification)
             }
         }
@@ -132,13 +128,15 @@ class TimerService : LifecycleService() {
                 scope.launch {
                     val persistentNotification : Notification
                     if(currentTime > 0L && getNumberOfActiveTimers()!! > 0) {
-                        persistentNotification = NotificationUtil.createActiveTimerNotification(timer, PERSISTENT_ACTIVE_CHANNEL_ID, applicationContext)
+                        persistentNotification = NotificationUtil.createActiveTimerNotification(timer,
+                            PERSISTENT_ACTIVE_CHANNEL_ID, applicationContext)
                         startForeground(FOREGROUND_ID, persistentNotification)
                         notificationHandler.postDelayed ({notificationCurrentTime.value = it}, 1000L)
                     } else {
                         notificationHandler.removeMessages(0)
                         CoroutineScope(Dispatchers.Default).launch { ServiceLocator.TimerRepo.updateTimerStatus(timer.id, TimerStatus.COMPLETED) }
-                        persistentNotification = NotificationUtil.createCompletedTimerNotification(timer, PERSISTENT_COMPLETED_CHANNEL_ID, applicationContext)
+                        persistentNotification = NotificationUtil.createCompletedTimerNotification(timer,
+                            PERSISTENT_COMPLETED_CHANNEL_ID, applicationContext)
                         notificationManager?.notify(FOREGROUND_ID, persistentNotification)
                     }
                 }

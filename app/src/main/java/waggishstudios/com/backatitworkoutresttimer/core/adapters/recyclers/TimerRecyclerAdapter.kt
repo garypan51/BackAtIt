@@ -1,11 +1,9 @@
 package waggishstudios.com.backatitworkoutresttimer.core.adapters.recyclers
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.SystemClock
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuInflater
 import android.view.View
@@ -27,12 +25,11 @@ import waggishstudios.com.backatitworkoutresttimer.core.TimerStatus
 import waggishstudios.com.backatitworkoutresttimer.core.entities.Timer
 import waggishstudios.com.backatitworkoutresttimer.core.ServiceLocator
 import waggishstudios.com.backatitworkoutresttimer.core.TimeConstants
-import waggishstudios.com.backatitworkoutresttimer.core.services.TimerService
+import waggishstudios.com.backatitworkoutresttimer.core.services.timer.TimerService
 import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.EditTimerDialogFragment
 import waggishstudios.com.backatitworkoutresttimer.ui.fragments.timers.HomeTimersFragment
 import java.util.*
 
-@SuppressLint("ClickableViewAccessibility")
 class TimerRecyclerAdapter(private val context : Context, private val lifeCycle : LifecycleOwner) : RecyclerView.Adapter<TimerRecyclerAdapter.TimerViewHolder>() {
     inner class TimerViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val timerCV = view.cardView
@@ -70,7 +67,6 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
     }
 
     override fun onBindViewHolder(holder: TimerViewHolder, position: Int) {
-        Log.d("testingLife","onBind")
         val timerStatus = MutableLiveData<TimerStatus>()
         val timerCurrentTime = MutableLiveData<Handler>()
         val timerCurrentSet = MutableLiveData<Int>()
@@ -370,8 +366,6 @@ class TimerRecyclerAdapter(private val context : Context, private val lifeCycle 
     }
 
     fun addAllTimers(timersToAdd: List<Timer>){
-//        timersToAdd.filter { it !in timersList }.forEach { timersList.add(it) }
-        Log.d("testingAdd", "" + (timersToAdd.size ?: 0))
         timersList.addAll(timersToAdd)
     }
 

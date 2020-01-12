@@ -1,17 +1,15 @@
 package waggishstudios.com.backatitworkoutresttimer.ui.fragments.timers
 
-import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import waggishstudios.com.backatitworkoutresttimer.core.adapters.recyclers.TimerRecyclerAdapter
 import waggishstudios.com.backatitworkoutresttimer.core.entities.Timer
 import waggishstudios.com.backatitworkoutresttimer.core.ServiceLocator
+import waggishstudios.com.backatitworkoutresttimer.ui.base.templates.BaseViewModel
 import kotlin.collections.ArrayList
 
-// Get timers, add timer to db, delete timer from db
-class HomeTimersViewModel : ViewModel() {
+class HomeTimersViewModel : BaseViewModel() {
     private val parentJob = Job()
     private val defaultScope = CoroutineScope(Dispatchers.Main + parentJob)
-//    val allTimers = ServiceLocator.TimerRepo.allTimers
 
     override fun onCleared() {
         super.onCleared()

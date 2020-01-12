@@ -1,15 +1,14 @@
 package waggishstudios.com.backatitworkoutresttimer.ui.fragments.stopwatches
 
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import waggishstudios.com.backatitworkoutresttimer.R
+import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.BaseFragment
 
-class HomeStopwatchesFragment : Fragment() {
+class HomeStopwatchesFragment : BaseFragment() {
     companion object {
         const val TITLE = "Stopwatch"
     }

@@ -1,4 +1,4 @@
-package waggishstudios.com.backatitworkoutresttimer.core.services
+package waggishstudios.com.backatitworkoutresttimer.core.services.timer
 
 import com.firebase.jobdispatcher.JobParameters
 import com.firebase.jobdispatcher.JobService
