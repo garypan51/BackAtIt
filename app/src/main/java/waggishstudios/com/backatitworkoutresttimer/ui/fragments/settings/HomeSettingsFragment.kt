@@ -2,13 +2,14 @@ package waggishstudios.com.backatitworkoutresttimer.ui.fragments.settings
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import waggishstudios.com.backatitworkoutresttimer.R
-class HomeSettingsFragment : Fragment() {
+import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.BaseFragment
+
+class HomeSettingsFragment : BaseFragment() {
     companion object {
         const val TITLE = "Settings"
     }
@@ -20,6 +21,4 @@ class HomeSettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
-
-
 }

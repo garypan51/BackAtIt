@@ -16,17 +16,17 @@
         android:theme="@style/AppTheme">
         <service
             android:exported="false"
-            android:name=".core.services.StopTimerJobService">
+            android:name=".core.services.timer.StopTimerJobService">
             <intent-filter>
                 <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
             </intent-filter>
         </service>
         <service
-            android:name=".core.services.TimerService"
+            android:name=".core.services.timer.TimerService"
             android:enabled="true"
             android:exported="true"></service>
         <service
-            android:name=".core.services.timerService.TimerIntentService"
+            android:name=".core.services.timer.TimerIntentService"
             android:exported="false"></service>
         <service
             android:name=".core.services.stopwatchService.StopWatchIntentService"

@@ -4,7 +4,7 @@ import android.os.Build
 import android.text.Html
 import android.text.Spanned
 
-class StringUtil {
+class TextUtil {
     companion object {
         fun getColoredText(toBeColoredText: String, color: String): Spanned {
             val finalText: Spanned

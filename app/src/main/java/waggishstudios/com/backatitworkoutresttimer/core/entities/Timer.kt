@@ -1,7 +1,6 @@
 package waggishstudios.com.backatitworkoutresttimer.core.entities
 
 import android.os.SystemClock
-import android.util.Log
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import waggishstudios.com.backatitworkoutresttimer.core.TimeConstants
@@ -25,14 +24,13 @@ data class Timer(
         }
 
         fun getStringTime(totalTimeInMilli: Int, showMilli: Boolean): String {
-//            Log.i("testingStringTime", "calling getStringTime: " + totalSecs)
             val timeInSeconds = totalTimeInMilli / TimeConstants.SECOND_IN_MILLISECONDS
             val initTimes = getHoursMinsSecsFromTotalSeconds(timeInSeconds)
             val hours = initTimes[0]
             val minutes = initTimes[1]
             val seconds = initTimes[2]
             var milliSeconds = if(showMilli) Math.round((totalTimeInMilli % TimeConstants.SECOND_IN_MILLISECONDS) / 10.0).toInt() else 0
-            // Removes the jank.
+
             if(milliSeconds > 99) {
                 milliSeconds = 99
             }
@@ -104,11 +102,6 @@ data class Timer(
         initHours = initTimes[0]
         initMinutes = initTimes[1]
         initSeconds = initTimes[2]
-
-        Log.i("testingStringTime", "initHours: " + initHours.toString())
-        Log.i("testingStringTime", "initMins: " + initMinutes.toString())
-        Log.i("testingStringTime", "initSeconds: " + initSeconds.toString())
-
         initTimeString = getStringInitialTime()
     }
     fun changeTimerTime(position : Int, time : Int){
@@ -119,30 +112,21 @@ data class Timer(
 
     fun getCurrentTime(): Long {
         if(isInactive() || isCompleted()){
-//            Log.d("testingStatus", "inactive or complete in getCurrentTime")
             return (timerList[0] * TimeConstants.SECOND_IN_MILLISECONDS).toLong()
         }
 
         if (startTime == 0L){
-            Log.d("testingTime", "setting start")
             startTime = SystemClock.elapsedRealtime()
-//            pausedTime = 0L
         }
 
         var currentTime = 0L
         if(pausedTime == 0L){
             currentTime = startTime + (timerList[0] * TimeConstants.SECOND_IN_MILLISECONDS)
-//            Log.d("testingTime", "not paused currentTime: " + currentTime)
         }
         else {
             currentTime = startTime + (pausedTime)
-//            Log.d("testingTime", "was paused currentTime: " + currentTime)
         }
-//        Log.d("testingStatus", "currentTime: " + (currentTime - SystemClock.elapsedRealtime()))
         return currentTime - SystemClock.elapsedRealtime()
-//        return SystemClock.elapsedRealtime() + (timerList[0] * TimeConstants.SECOND_IN_MILLISECONDS)
-//        return if(pausedTime == 0L) SystemClock.elapsedRealtime() + (timerList[0] * TimeConstants.SECOND_IN_MILLISECONDS)
-//        else SystemClock.elapsedRealtime() + (pausedTime * TimeConstants.SECOND_IN_MILLISECONDS)
     }
 
     fun getCurrentTimeForDisplay(showMilli: Boolean): String {

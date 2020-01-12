@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "445517559667",
-    "firebase_url": "https://back-at-it.firebaseio.com",
-    "project_id": "back-at-it",
-    "storage_bucket": "back-at-it.appspot.com"
+    "project_number": "SECRET",
+    "firebase_url": "https://SECRET.firebaseio.com",
+    "project_id": "SECRET",
+    "storage_bucket": "SECRET.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:445517559667:android:0ea874c49cf97187",
+        "mobilesdk_app_id": "SECRET",
         "android_client_info": {
           "package_name": "waggishstudios.com.backatitworkoutresttimer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "445517559667-rdovreplghnmf9h6e63l056vu396ndga.apps.googleusercontent.com",
+          "client_id": "SECRET.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "waggishstudios.com.backatitworkoutresttimer",
-            "certificate_hash": "5ff1ab37ca10bf9a4e810e1611aec8384252d2d6"
+            "certificate_hash": "SECRET"
           }
         },
         {
-          "client_id": "445517559667-gjpj81lgn48cprksfov7s9rrp3qkmacf.apps.googleusercontent.com",
+          "client_id": "SECRET.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCR9afeA_A4SFhubtQpe_cVS_XNr0Z0Psk"
+          "current_key": "SECRET"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "445517559667-gjpj81lgn48cprksfov7s9rrp3qkmacf.apps.googleusercontent.com",
+              "client_id": "SECRET.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -49,7 +49,7 @@
           "status": 2
         }
       },
-      "admob_app_id": "ca-app-pub-2135676329337085~8791748455"
+      "admob_app_id": "ca-app-pub-SECRET"
     }
   ],
   "configuration_version": "1"

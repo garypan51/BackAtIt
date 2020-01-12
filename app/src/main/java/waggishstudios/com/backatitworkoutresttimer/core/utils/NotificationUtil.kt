@@ -14,7 +14,7 @@ import waggishstudios.com.backatitworkoutresttimer.R
 import waggishstudios.com.backatitworkoutresttimer.core.TimeConstants
 import waggishstudios.com.backatitworkoutresttimer.core.entities.Timer
 import waggishstudios.com.backatitworkoutresttimer.ui.activities.MainActivity
-import waggishstudios.com.backatitworkoutresttimer.ui.utils.StringUtil
+import waggishstudios.com.backatitworkoutresttimer.ui.utils.TextUtil
 import android.media.RingtoneManager
 import waggishstudios.com.backatitworkoutresttimer.core.IntentConstants
 
@@ -47,9 +47,9 @@ class NotificationUtil {
                 remainingTimeColor = "red"
             }
             activeTimerNotificationView.setTextViewText(R.id.timeRemainingView,
-                StringUtil.getColoredText(timer.getCurrentTimeForDisplay(false), remainingTimeColor))
+                TextUtil.getColoredText(timer.getCurrentTimeForDisplay(false), remainingTimeColor))
             activeTimerNotificationView.setTextViewText(R.id.setCounterView,
-                StringUtil.getColoredText(timer.setCounter.toString(), "green"))
+                TextUtil.getColoredText(timer.setCounter.toString(), "green"))
 
             val openAppPendingIntent = createOpenAppPI(false, 0, context)
             val stopServicePendingIntent = createStopServicePI(context)
@@ -80,9 +80,9 @@ class NotificationUtil {
         fun createCompletedTimerNotification(timer: Timer, notificationId: String, context: Context): Notification {
             val completedTimerNotificationView = RemoteViews(context.packageName, R.layout.notification_completed_timer)
             completedTimerNotificationView.setTextViewText(R.id.timerTimeView,
-                StringUtil.getColoredText(timer.initTimeString, "red"))
+                TextUtil.getColoredText(timer.initTimeString, "red"))
             completedTimerNotificationView.setTextViewText(R.id.setCounterView,
-                StringUtil.getColoredText(timer.setCounter.toString(), "red"))
+                TextUtil.getColoredText(timer.setCounter.toString(), "red"))
 
             val openAppPendingIntent = createOpenAppPI(false, 0, context)
             val stopServicePendingIntent = createStopServicePI(context)
@@ -113,8 +113,6 @@ class NotificationUtil {
         private fun createOpenAppPI(shouldScroll: Boolean, id: Int, context: Context): PendingIntent {
             val openAppNotificationIntent = Intent(context, MainActivity::class.java)
             openAppNotificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//            openAppNotificationIntent.action = Intent.ACTION_MAIN
-//            openAppNotificationIntent.addCategory(Intent.CATEGORY_LAUNCHER)
             if (shouldScroll) {
                 openAppNotificationIntent.putExtra("ScrollId", id)
                 openAppNotificationIntent.putExtra("OpenFromApp", true)
@@ -126,8 +124,6 @@ class NotificationUtil {
         private fun createStopServicePI(context: Context): PendingIntent {
             val exitIntent = Intent(IntentConstants.TimerService.STOP_SERVICE)
             return PendingIntent.getBroadcast(context, 0, exitIntent, 0)
-//            val exitIntent = Utils.createIntentForServiceReceiver(this, "shutdown")
-//            return PendingIntent.getBroadcast(context, 0, exitIntent, 0)
         }
 
         private fun createRestartTimerPI(timerId: Int, context: Context): PendingIntent {

@@ -5,8 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,12 +21,13 @@ import waggishstudios.com.backatitworkoutresttimer.core.IntentConstants
 import waggishstudios.com.backatitworkoutresttimer.core.ServiceLocator
 import waggishstudios.com.backatitworkoutresttimer.core.adapters.recyclers.DragManageAdapter
 import waggishstudios.com.backatitworkoutresttimer.core.adapters.recyclers.TimerRecyclerAdapter
-import waggishstudios.com.backatitworkoutresttimer.core.services.TimerService
+import waggishstudios.com.backatitworkoutresttimer.core.services.timer.TimerService
 import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.AddTimerDialogFragment
 import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.EditTimerDialogFragment
 import waggishstudios.com.backatitworkoutresttimer.ui.utils.getViewModel
+import waggishstudios.com.backatitworkoutresttimer.ui.fragments.dialogs.BaseFragment
 
-class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogListener,
+class HomeTimersFragment : BaseFragment(), AddTimerDialogFragment.AddTimerDialogListener,
     EditTimerDialogFragment.EditTimerDialogListener, DragManageAdapter.OnStartDragListener {
     companion object {
         const val TITLE = "Timers"
@@ -50,7 +49,6 @@ class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogList
         override fun onReceive(context: Context?, intent: Intent?) {
             when(intent?.action) {
                 IntentConstants.TimerService.ALERT_TIMER_RESTART -> {
-                    Log.d("testingStatus", "NotifyDataSetChanged")
                     if(!isResumed) {
                         openedAfterNotificationRestart = true
                     }
@@ -65,7 +63,6 @@ class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogList
 
     override fun onFinishAddDialog(name: String, timerList : ArrayList<Int>, shouldAutoInc : Boolean, autoReset: Int) {
         // Adds Timer to DB and RecyclerView
-        Log.d("testingtype", "onfinishedadddialog")
         viewModel.addTimer(name, timerList, shouldAutoInc, autoReset, timersAdapter)
     }
 
@@ -94,7 +91,6 @@ class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogList
 
     override fun onResume() {
         timersAdapter.notifyDataSetChanged()
-        Log.d("testingLife", "HomeTimerList onResume")
         super.onResume()
     }
 
@@ -109,11 +105,6 @@ class HomeTimersFragment : Fragment(), AddTimerDialogFragment.AddTimerDialogList
     override fun onStop() {
         localBroadcastManager.unregisterReceiver(broadcastReceiver)
         super.onStop()
-    }
-
-    override fun onDestroy() {
-        Log.d("testingLife","onDestroy")
-        super.onDestroy()
     }
 
     private fun setUpObservers(){
