@@ -1,6 +1,6 @@
 # Back At It Timer
 
-The following app is a timer app that also keeps that helps keep track of the current set that you are on for your workout.
+The following app is a timer app that also helps keep track of the current set that you are on for a workout.
 This app utilizes a foreground service, so that the timer can always display the time remaining before your next set and allows for 
 resetting the timer via a notification icon press, even from the lock screen of the device.
 Currently the project is being re-written in Kotlin and with Android Jetpack, as it was originally written in Java. 
@@ -36,6 +36,17 @@ Create an Android Emulator if one doesn't already exist to run the app on a emul
 * Select `Run -> Run 'app'` from the menu bar
 * Select the device/emulator you wish to run the app on and click 'OK'
 
+## Screenshots 
+<div>
+    <img src="images/Timers.jpg" width="120">
+    &nbsp;
+    <img src="images/TimerRunningAndPaused.jpg" width="120">
+    &nbsp;
+    <img src="images/NotificationRunning.jpg" width="120">
+    &nbsp;
+    <img src="images/NotificationComplete.jpg" width="120">
+</div>
+
 ## Estimated RoadMap
 
 The following are a list of items that should be worked on sorted by the order of priority and/or importance.
@@ -57,10 +68,6 @@ The following are a list of items that should be worked on sorted by the order o
     * Finalize all changes and create comps on Adobe XD before starting any further development.
     * Add Stopwatch functionality.
     * Add light and dark themes.
-
-## License
-
-This project is licensed under the MIT License, so feel free to use it as you wish. See LICENSE file for more details.
 
 ## Notice 
 
