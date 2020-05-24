@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Back At It! Workout Rest Timer and StopWatch</string>
+    <string name="app_name">Next Set Workout Timer</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>

@@ -1,55 +1,39 @@
 {
   "project_info": {
-    "project_number": "SECRET",
-    "firebase_url": "https://SECRET.firebaseio.com",
-    "project_id": "SECRET",
-    "storage_bucket": "SECRET.appspot.com"
+    "project_number": "414228855586",
+    "firebase_url": "https://next-set-workout-timer.firebaseio.com",
+    "project_id": "next-set-workout-timer",
+    "storage_bucket": "next-set-workout-timer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "SECRET",
+        "mobilesdk_app_id": "1:414228855586:android:0d387afb904bc9cb74437b",
         "android_client_info": {
-          "package_name": "waggishstudios.com.backatitworkoutresttimer"
+          "package_name": "com.garypanapps.nextsetworkouttimer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "SECRET.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "waggishstudios.com.backatitworkoutresttimer",
-            "certificate_hash": "SECRET"
-          }
-        },
-        {
-          "client_id": "SECRET.apps.googleusercontent.com",
+          "client_id": "414228855586-79lg4ct55kljiumdol13afo4qundvgt5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "SECRET"
+          "current_key": "AIzaSyBLoYvHo1Xm9CThzYR6kz8fzjDoYh18Jsw"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "SECRET.apps.googleusercontent.com",
+              "client_id": "414228855586-79lg4ct55kljiumdol13afo4qundvgt5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
-      },
-      "admob_app_id": "ca-app-pub-SECRET"
+      }
     }
   ],
   "configuration_version": "1"

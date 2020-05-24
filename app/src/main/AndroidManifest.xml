@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="waggishstudios.com.backatitworkoutresttimer">
+    package="com.garypanapps.nextsetworkouttimer">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name=".App"
+        android:name="com.garypanapps.nextsetworkouttimer.App"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -16,24 +16,24 @@
         android:theme="@style/AppTheme">
         <service
             android:exported="false"
-            android:name=".core.services.timer.StopTimerJobService">
+            android:name="com.garypanapps.nextsetworkouttimer.core.services.timer.StopTimerJobService">
             <intent-filter>
                 <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
             </intent-filter>
         </service>
         <service
-            android:name=".core.services.timer.TimerService"
+            android:name="com.garypanapps.nextsetworkouttimer.core.services.timer.TimerService"
             android:enabled="true"
             android:exported="true"></service>
         <service
-            android:name=".core.services.timer.TimerIntentService"
+            android:name="com.garypanapps.nextsetworkouttimer.core.services.timer.TimerIntentService"
             android:exported="false"></service>
         <service
             android:name=".core.services.stopwatchService.StopWatchIntentService"
             android:exported="false"></service>
 
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name="com.garypanapps.nextsetworkouttimer.ui.activities.MainActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
