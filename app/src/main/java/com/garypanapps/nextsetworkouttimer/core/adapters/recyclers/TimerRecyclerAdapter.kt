@@ -27,7 +27,7 @@ import com.garypanapps.nextsetworkouttimer.core.ServiceLocator
 import com.garypanapps.nextsetworkouttimer.core.TimeConstants
 import com.garypanapps.nextsetworkouttimer.core.services.timer.TimerService
 import com.garypanapps.nextsetworkouttimer.ui.fragments.dialogs.EditTimerDialogFragment
-import com.garypanapps.nextsetworkouttimer.ui.fragments.timers.HomeTimersFragment
+import com.garypanapps.nextsetworkouttimer.ui.fragments.timer.HomeTimersFragment
 import java.util.*
 
 class TimerRecyclerAdapter(private val context : Context, private val lifeCycle : LifecycleOwner) : RecyclerView.Adapter<TimerRecyclerAdapter.TimerViewHolder>() {

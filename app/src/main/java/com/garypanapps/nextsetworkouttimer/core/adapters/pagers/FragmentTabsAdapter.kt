@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.garypanapps.nextsetworkouttimer.ui.fragments.settings.HomeSettingsFragment
 import com.garypanapps.nextsetworkouttimer.ui.fragments.stopwatches.HomeStopwatchesFragment
-import com.garypanapps.nextsetworkouttimer.ui.fragments.timers.HomeTimersFragment
+import com.garypanapps.nextsetworkouttimer.ui.fragments.timer.HomeTimersFragment
 
 class FragmentTabsAdapter(fragManager : FragmentManager) : FragmentPagerAdapter(fragManager) {
     companion object {

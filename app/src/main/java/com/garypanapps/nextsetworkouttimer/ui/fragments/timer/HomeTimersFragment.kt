@@ -1,4 +1,4 @@
-package com.garypanapps.nextsetworkouttimer.ui.fragments.timers
+package com.garypanapps.nextsetworkouttimer.ui.fragments.timer
 
 import android.content.BroadcastReceiver
 import android.content.Context

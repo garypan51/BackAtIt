@@ -1,4 +1,4 @@
-package com.garypanapps.nextsetworkouttimer.ui.fragments.timers
+package com.garypanapps.nextsetworkouttimer.ui.fragments.timer
 
 import kotlinx.coroutines.*
 import com.garypanapps.nextsetworkouttimer.core.adapters.recyclers.TimerRecyclerAdapter
